@@ -1,0 +1,83 @@
+@import "var";
+@mixin a_link{
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+@mixin a_link_active{
+  text-decoration: none;
+}
+@mixin clear{
+  padding: 0;
+  margin: 0;
+}
+@mixin hr($top,$bottom,$color,$left,$right){
+  margin-top: $top;
+  margin-bottom:$bottom;
+  border-color: $color;
+  margin-left: $left;
+  margin-right:$right;
+}
+@mixin offset($value){
+  margin-left: $value;
+}
+/*320px - 480px*/
+@mixin extraxs{
+  @media only screen and (min-width: 315px) and (max-width: $phone) {
+    @content
+  }
+}
+/*480px and less*/
+@mixin sxs{
+  @media only screen and (max-width: $phone) {
+    @content
+  }
+}
+/*576px and less*/
+@mixin xs{
+  @media only screen and (max-width: $smartphone) {
+    @content
+  }
+}
+/*767px and less*/
+@mixin sm{
+  @media only screen and (max-width: $bigphone) {
+    @content
+  }
+}
+/*Between 767px - 992px*/
+@mixin md-sm{
+  @media only screen and (min-width: $bigphone) and (max-width: $tablet){
+    @content
+  }
+}
+/*992px and less*/
+@mixin md{
+  @media only screen and (max-width: $tablet) {
+    @content
+  }
+}
+/*Between 992px - 1200px*/
+@mixin md-lg{
+  @media only screen and (min-width: $tablet) and (max-width: $pc) {
+    @content
+  }
+}
+/*1200px and less*/
+@mixin lg{
+  @media only screen and (max-width: $pc) {
+    @content
+  }
+}
+/*1200px and bigger*/
+@mixin blg{
+  @media only screen and (min-width: $pc) {
+    @content
+  }
+}
+/*My pc*/
+@mixin eblg{
+  @media only screen and (max-width:$my_pc) and (min-width: $pc){
+    @content
+  }
+}
